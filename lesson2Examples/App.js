@@ -21,7 +21,7 @@ export default function App() {
 
       </View>
 
-      {/*<View style={styles.darkGreenContainer}>
+      <View style={styles.darkGreenContainer}>
 
         <View style={styles.greenRect}>
         </View>
@@ -32,7 +32,7 @@ export default function App() {
         <View style={styles.greenRect}>
         </View>
 
-      </View>*/}
+      </View>
 
       <StatusBar style="auto" />
 
@@ -42,29 +42,39 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#a3f5d8',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex:1,
+    backgroundColor:"#a3f5d8",
+    alignItems:"center",
+    justifyContent: "space-around",
+    
   },
   darkGreyContainer: {
+    flex:0.2,
     backgroundColor:"gray",
-    width:200,
-    height:120,
+    width:350,
     flexDirection:"row",
-    justifyContent:"center",
+    justifyContent:"space-evenly",
+    marginTop:40,
+    alignItems:"center"
   },
   redBox: {
     backgroundColor:"red",
     width:30,
     height:30,
+    alignItems:"center",
     justifyContent:"center",
-    alignContent:"center",
   },
   darkGreenContainer: {
+    flex:0.7,
     backgroundColor:"darkgreen",
+    width:350,
+    marginBottom:30,
+    alignItems:"center",
+    justifyContent:"space-evenly",
   },
   greenRect: {
-    backgroundColor:"lightgreen,"
+    backgroundColor:"lightgreen",
+    width:250,
+    height:60,
   },
 });
