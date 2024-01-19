@@ -46,12 +46,11 @@ const styles = StyleSheet.create({
     backgroundColor:"#a3f5d8",
     alignItems:"center",
     justifyContent: "space-around",
-    
   },
   darkGreyContainer: {
     flex:0.2,
     backgroundColor:"gray",
-    width:350,
+    width:"80%",
     flexDirection:"row",
     justifyContent:"space-evenly",
     marginTop:40,
@@ -67,14 +66,14 @@ const styles = StyleSheet.create({
   darkGreenContainer: {
     flex:0.7,
     backgroundColor:"darkgreen",
-    width:350,
+    width:"80%",
     marginBottom:30,
     alignItems:"center",
     justifyContent:"space-evenly",
   },
   greenRect: {
     backgroundColor:"lightgreen",
-    width:250,
+    width:"80%",
     height:60,
   },
 });
