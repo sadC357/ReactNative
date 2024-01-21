@@ -1,34 +1,28 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import colors from './app/config/colors';
-import defaultStyles from './app/config/defaultStyles'
 
 export default function App() {
   return (
     <View style={styles.container}>
-
       <View style={styles.purpleContainer}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>React Native Assgn 1</Text>
         </View>
       </View>
 
-      <View style={styles.lavenderContainer}>
-        <View styles={styles.squareContainer}>
+      <View style={styles.lavenderTopContainer}>
           <View style={styles.darkGrayBox}>
           </View>
-
           <View style={styles.darkGrayBox}>
           </View>
-
           <View style={styles.darkGrayBox}>
           </View>
-        </View>
+      </View>
 
-        <View style={styles.rectContainer}>
+      <View style={styles.lavenderBottomContainer}>
           <View style={styles.tealBox}>
           </View>
-        </View>
       </View>
 
       <StatusBar style="auto" />
@@ -39,17 +33,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent:"space-between",
+    backgroundColor:colors.lightGrey,
+    alignItems:"center",
+    justifyContent:"center",
   },
   purpleContainer:{
     backgroundColor:colors.primary,
-    flex:0.15,
-    width:"80%",
+    flex:0.25,
+    width:"90%",
     marginTop:50,
     alignItems:"center",
     justifyContent:"center",
+    marginBottom:10,
   },
   titleContainer:{
     backgroundColor:colors.secondary,
@@ -60,31 +55,34 @@ const styles = StyleSheet.create({
     padding:10,
     fontWeight:"bold",
   },
-  lavenderContainer:{
+  lavenderTopContainer:{
     backgroundColor:colors.secondary,
     flex:0.82,
-    width:"80%",
-    flexDirection:"column",
-    marginBottom:30,
-  },
-  squareContainer:{
+    width:"90%",
     flexDirection:"row",
-    alignItems:"center",
-    justifyContent:"center"
+    justifyContent:"space-around"
   },
   darkGrayBox:{
+    height:70,
+    width:100,
     backgroundColor:colors.darkGrey,
-    height:50,
-    width:50,
+    marginTop:10,
+    borderRadius:10,
   },
-  rectContainer:{
+  lavenderBottomContainer:{
+    backgroundColor:colors.secondary,
+    flex:0.82,
+    width:"90%",
+    marginBottom:30,
     flexDirection:"column-reverse"
   },
   tealBox:{
     backgroundColor:colors.teal,
-    height:400,
-    width:50,
-    marginTop:50,
-    marginBottom:50,
+    height:280,
+    width:"28%",
+    marginLeft:230,
+    marginBottom:30,
+    borderColor:colors.darkGrey,
+    borderWidth:5,
   },
 });
