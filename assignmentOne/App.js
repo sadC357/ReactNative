@@ -32,7 +32,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
     backgroundColor:colors.lightGrey,
     alignItems:"center",
     justifyContent:"center",
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     flex:0.82,
     width:"90%",
     flexDirection:"row",
-    justifyContent:"space-around"
+    justifyContent:"space-around",
   },
   darkGrayBox:{
     height:70,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     flex:0.82,
     width:"90%",
     marginBottom:30,
-    flexDirection:"column-reverse"
+    flexDirection:"column-reverse",
   },
   tealBox:{
     backgroundColor:colors.teal,
