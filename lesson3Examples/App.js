@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, TouchableHighlight, View, Alert } from 'react-native';
+import { Button, StyleSheet, Text, TouchableHighlight, View, Alert, TouchableOpacity } from 'react-native';
 
 //put functions before App()
 const firstFunction=()=>{
@@ -9,6 +9,14 @@ const firstFunction=()=>{
 const myAlertFn=()=>{
   Alert.alert("Alert Title","Alert Message",[
     {text:"Yes",onPress:()=>console.log("Pressed Yes")},
+    {text:"No",onPress:()=>console.log("Pressed No")},
+  ]);
+}
+
+const readyAlert=()=>{
+  Alert.alert("Are You Ready?","Click One",[
+    {text:"Yes",onPress:()=>console.log("Pressed Yes")},
+    {text:"Maybe",onPress:()=>console.log("Pressed Maybe")},
     {text:"No",onPress:()=>console.log("Pressed No")},
   ]);
 }
@@ -40,6 +48,14 @@ export default function App() {
         title="Alert Button"
         onPress={myAlertFn}
       />
+
+      <TouchableOpacity
+        onPress={readyAlert}
+        style={{backgroundColor:"lightblue",borderWidth:5,height:50}} 
+        underlayColor="green"
+      >
+        <Text>ARE YOU READY?</Text>
+      </TouchableOpacity>
 
       <StatusBar style="auto" />
     </View>
