@@ -1,29 +1,39 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {TouchableHighlight, Text, View, StyleSheet} from 'react-native';
+
 import colors from '../config/colors';
 
-
-function MyButton({title="", onPress}) {
-    return (
-        <View 
-            style={styles.button}
-            onPress={onPress}
-        >
-            <Text style={styles.text}>{title}</Text>
-        </View>
+function MyButton({title="0", onPress, underlayColor=colors.pink,backgroundColor, borderColor,text}) {
+    return(
+        <TouchableHighlight 
+        style={[styles.button,
+            {backgroundColor:backgroundColor,
+            borderColor:borderColor,
+            text:text}]}
+        onPress={onPress}
+        underlayColor={underlayColor}
+      >
+        <Text style={styles.text}>{title}</Text>
+      </TouchableHighlight>
     );
 }
+
 const styles = StyleSheet.create({
-    button: {
-        backgroundColor: colors.primary,
-        borderRadius: 25,
-        justifyContent: 'center',
-        alignItems: 'center', 
-    },
-    text: {
-        color: colors.white,
-        fontSize: 18,
-        fontWeight: 'bold',
-    }
+  button:{
+    height:100,
+    width:100,
+    borderRadius:50, //when br is half side, it makes a circle
+    backgroundColor:colors.green,
+    borderWidth:5,
+    borderColor:colors.navyBlue,
+    justifyContent:"center",
+    alignItems:"center",
+  },
+  text:{
+    fontSize:18,
+    fontWeight:"bold",
+    color:colors.navyBlue,
+  },
 })
+
 export default MyButton;

@@ -10,9 +10,34 @@ export default function App() {
       <TouchableHighlight 
         style={styles.button}
         onPress={()=>console.log("pressed")}
+        underlayColor={colors.pink}
       >
         <Text style={styles.text}>HELLO</Text>
       </TouchableHighlight>
+
+      <MyButton/>
+
+      <MyButton title="HI"/>
+
+      <MyButton 
+        title="HEY"
+        onPress={()=>console.log("hey")}
+      />
+
+      <MyButton 
+        title="WOAH"
+        onPress={()=>console.log("woah")}
+        underlayColor={colors.lavender}
+      />
+
+      <MyButton 
+        title="yay"
+        onPress={()=>console.log("yay")}
+        underlayColor={colors.green}
+        backgroundColor={colors.lavender}
+        borderColor={colors.purple}
+        text={colors.navyBlue}
+      />
     </View>
   );
 }
