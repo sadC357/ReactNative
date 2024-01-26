@@ -1,8 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableHighlight, View } from 'react-native';
+import { StyleSheet, Text, TouchableHighlight, View, Alert } from 'react-native';
 
 import colors from './app/config/colors';
 import MyButton from './app/components/MyButton';
+import MyAlertButton from './app/components/MyAlertButton';
+import MyImage from './app/components/MyImage';
+
+const readyAlert=()=>{
+  Alert.alert("Are You Ready?","Click One",[
+    {text:"Yes",onPress:()=>console.log("Pressed Yes")},
+    {text:"Maybe",onPress:()=>console.log("Pressed Maybe")},
+    {text:"No",onPress:()=>console.log("Pressed No")},
+  ]);
+}
 
 export default function App() {
   return (
@@ -37,6 +47,19 @@ export default function App() {
         backgroundColor={colors.lavender}
         borderColor={colors.purple}
         text={colors.navyBlue}
+      />
+
+      <MyAlertButton
+        title="alert"
+        onPress={readyAlert}
+        backgroundColor={colors.lavender}
+        borderColor={colors.pink}
+      />
+
+      <MyImage
+        source={require("./app/assets/favicon.png")}
+        width={200}
+        height={200}
       />
     </View>
   );

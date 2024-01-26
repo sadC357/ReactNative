@@ -20,7 +20,7 @@ function MyButton({title="0", onPress, underlayColor=colors.pink,backgroundColor
 
 const styles = StyleSheet.create({
   button:{
-    height:100,
+    height:50,
     width:100,
     borderRadius:50, //when br is half side, it makes a circle
     backgroundColor:colors.green,
