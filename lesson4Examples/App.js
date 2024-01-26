@@ -1,10 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableHighlight, View, Alert } from 'react-native';
 
+import { FontAwesome6 } from '@expo/vector-icons';
+
 import colors from './app/config/colors';
+
 import MyButton from './app/components/MyButton';
 import MyAlertButton from './app/components/MyAlertButton';
 import MyImage from './app/components/MyImage';
+
+import IconButton from './app/components/IconButton';
+import IconTextButton from './app/components/IconTextButton';
 
 const readyAlert=()=>{
   Alert.alert("Are You Ready?","Click One",[
@@ -16,13 +22,13 @@ const readyAlert=()=>{
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    /*<View style={styles.container}>
       <TouchableHighlight 
         style={styles.button}
         onPress={()=>console.log("pressed")}
         underlayColor={colors.pink}
       >
-        <Text style={styles.text}>HELLO</Text>
+        <FontAwesome6 name="xbox" size={40} color="black" />
       </TouchableHighlight>
 
       <MyButton/>
@@ -58,9 +64,19 @@ export default function App() {
 
       <MyImage
         source={require("./app/assets/favicon.png")}
-        width={200}
-        height={200}
+        width={50}
+        height={50}
       />
+
+      <FontAwesome6 name="xbox" size={40} color="green" />
+
+      <IconButton/>
+
+      <IconButton name="playstation"/>
+    </View>*/
+    
+    <View style={styles.container}>
+      <IconTextButton/>
     </View>
   );
 }
