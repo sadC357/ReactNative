@@ -5,41 +5,42 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import colors from '../config/colors';
 
-function IconTextButton({title="food",name="xbox",onPress,underlayColor=colors.green,borderColor=colors.pink}) {
+function IconTextButton({title="Croissant",name="food-croissant",color=colors.pink,size=24,
+onPress=()=>console.log("default"),underlayColor=colors.maroon,}) {
     return(
-        <View>
         <TouchableHighlight 
-            style={[styles.button,
-                {borderColor:borderColor}]}
+            style={[styles.button,{borderColor:color}]}
             onPress={onPress}
             underlayColor={underlayColor}
         >
-            <MaterialCommunityIcons name="food-croissant" size={24} color="black">
-                <Text>{title}</Text>
-            </MaterialCommunityIcons>
+            <View style={styles.buttonContent}>
+              <MaterialCommunityIcons name={name} size={size} color={color}/>
+              <Text style={[styles.text,{color:color,fontSize:size}]}>{title}</Text>
+            </View>
         </TouchableHighlight>
-        </View>
     );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    alignContent:"space-between"
-  },
   button:{
-    height:70,
+    height:100,
     width:200,
-    borderRadius:50, //when br is half side, it makes a circle
-    backgroundColor:colors.lavender,
+    borderRadius:50,
+    backgroundColor:colors.navyBlue,
     borderWidth:5,
     borderColor:colors.lavender,
     justifyContent:"space-around",
     alignItems:"center",
+    margin:10,
+  },
+  buttonContent:{
+    flexDirection:"row",
   },
   text:{
     fontSize:20,
     fontWeight:"bold",
-    color:"white",
+    color:colors.navyBlue,
+    paddingLeft:20,
   },
 })
 

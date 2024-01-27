@@ -51,7 +51,7 @@ export default function App() {
         onPress={()=>console.log("yay")}
         underlayColor={colors.green}
         backgroundColor={colors.lavender}
-        borderColor={colors.purple}
+        borderColor={colors.maroon}
         text={colors.navyBlue}
       />
 
@@ -77,6 +77,20 @@ export default function App() {
     
     <View style={styles.container}>
       <IconTextButton/>
+
+      <IconTextButton
+        name="food-turkey"
+        title='Turkey'
+        size={40}
+        color={colors.green}
+      />
+
+    <IconTextButton
+        name="noodles"
+        title='Noodles'
+        size={15}
+        color={colors.lavender}
+      />
     </View>
   );
 }

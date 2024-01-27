@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
   text:{
     fontSize:18,
     fontWeight:"bold",
-    color:colors.purple,
+    color:colors.maroon,
   },
 })
 
