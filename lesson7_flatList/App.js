@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, FlatList} from 'react-native';
+import { Text, View, StyleSheet, FlatList, TextInput, TouchableHighlight} from 'react-native';
 import Constants from 'expo-constants';
 import React, {useState} from 'react';
 
@@ -56,6 +56,31 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={[styles.text, {fontWeight: 'bold'}]}>My Friends</Text>
+
+      <View style={styles.inputTextContainer}>
+        <View style={styles.inputTextRow}>
+          <Text style={styles.textLabel}>Name:</Text>
+          <TextInput style={styles.textInput}/>
+
+          <Text style={styles.textLabel}>Age:</Text>
+          <TextInput style={styles.textInput}/>
+        </View>
+
+        <View style={styles.inputTextRow}>
+          <Text style={styles.textLabel}>Fav Activity:</Text>
+          <TextInput style={styles.textInput}/>
+        </View>
+
+        <View style={styles.inputTextRow}>
+          <TouchableHighlight
+            style={styles.button}
+            underlayColor={colors.verylight}
+            onPress={()=>console.log("pressed")}>
+            <Text style={styles.text}>Add Friend</Text>
+          </TouchableHighlight>
+        </View>
+      </View>
+     
      {/* First we will design ONE row of our FlatList*/}
 
      {/*
@@ -105,6 +130,41 @@ const styles = StyleSheet.create({
     paddingTop: Constants.statusBarHeight,
     backgroundColor: colors.verylight,
     padding: 8,
+  },
+  inputTextContainer:{
+    backgroundColor: colors.primary,
+    width:"100%",
+    height:200,
+    justifyContent:"center",
+  },
+  inputTextRow:{
+    flexDirection:"row",
+    height:50,
+    justifyContent:"center",
+    margin:5,
+  },
+  textLabel:{
+    fontSize:18,
+    color:colors.secondary,
+    margin:5,
+  },
+  textInput:{
+    backgroundColor:colors.light,
+    fontSize:18,
+    borderWidth:2,
+    borderRadius:10,
+    borderColor:colors.secondary,
+    width:"35%",
+    height:"65%",
+  },
+  button:{
+    backgroundColor:colors.light,
+    justifyContent:"center",
+    alignItems:"center",
+    borderColor:colors.secondary,
+    borderRadius:20,
+    borderWidth:5,
+    width:150,
   },
   itemRowContainer:{
     backgroundColor:colors.light,
