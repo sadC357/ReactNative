@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, FlatList, TextInput, TouchableHighlight} from 'react-native';
+import { Text, View, StyleSheet, FlatList, TextInput, TouchableHighlight, Keyboard} from 'react-native';
 import Constants from 'expo-constants';
 import React, {useState} from 'react';
 
@@ -37,6 +37,33 @@ export default function App() {
   //values in initialFriends
   const [friends, setFriends] = useState(initialFriends);
 
+  //create a state variable to represent each of the vars for a friend
+  const [id,setId]=useState(initialFriends.length+1);
+  const [name,setName]=useState("");
+  const [age,setAge]=useState("");
+  const [favActivity,setFavActivity]=useState("");
+
+  const handleAdd = () =>{
+    //create a friend object from the state vars
+    const newFriend={
+      id:id,
+      name:name,
+      age:age,
+      favActivity:favActivity,
+    }
+    //add this object to the end of the array by calling setFriends
+    //... is the spread operator and this says to take the entire friends away
+    //and then add newFriend at the ends
+    setFriends([...friends,newFriend]);
+    //call setId to increase if num for the next friend we make
+    setId(id+1);
+    //resetting the state vars to clear out textInput
+    setName("");
+    setAge("");
+    setFavActivity("");
+    Keyboard.dismiss();
+  }
+
   /*
     This function takes in one parameter called friend that
     represents the friends we want to delete from the array
@@ -60,22 +87,34 @@ export default function App() {
       <View style={styles.inputTextContainer}>
         <View style={styles.inputTextRow}>
           <Text style={styles.textLabel}>Name:</Text>
-          <TextInput style={styles.textInput}/>
+          <TextInput 
+            style={styles.textInput}
+            onChangeText={text=> setName(text)}
+            value={name}
+            />
 
           <Text style={styles.textLabel}>Age:</Text>
-          <TextInput style={styles.textInput}/>
+          <TextInput 
+            style={styles.textInput}
+            onChangeText={text=> setAge(text)}
+            value={age}
+            />
         </View>
 
         <View style={styles.inputTextRow}>
           <Text style={styles.textLabel}>Fav Activity:</Text>
-          <TextInput style={styles.textInput}/>
+          <TextInput 
+            style={styles.textInput}
+            onChangeText={text=> setFavActivity(text)}
+            value={favActivity}
+            />
         </View>
 
         <View style={styles.inputTextRow}>
           <TouchableHighlight
             style={styles.button}
             underlayColor={colors.verylight}
-            onPress={()=>console.log("pressed")}>
+            onPress={handleAdd}>
             <Text style={styles.text}>Add Friend</Text>
           </TouchableHighlight>
         </View>
