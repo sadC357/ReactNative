@@ -171,7 +171,7 @@ const styles = StyleSheet.create({
     padding: 8,
   },
   inputTextContainer:{
-    backgroundColor: colors.primary,
+    backgroundColor: colors.dark,
     width:"100%",
     height:200,
     justifyContent:"center",
