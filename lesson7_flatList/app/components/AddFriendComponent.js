@@ -1,9 +1,9 @@
-import { Text, View, StyleSheet, TextInput, TouchableHighlight } from 'react-native';
+import { Text, View, StyleSheet, TextInput, TouchableHighlight, Keyboard } from 'react-native';
 import React, {useState} from 'react';
 
 import colors from '../config/colors';
 
-export default function AddFriendComponent({startingId}) {
+export default function AddFriendComponent({startingId,handleAdd}) {
     //create a state variable to represent each of the vars for a friend
     const [id,setId]=useState(startingId);
     const [name,setName]=useState("");
@@ -17,6 +17,26 @@ export default function AddFriendComponent({startingId}) {
             call that function
             update handleAdd in App.js to reflect the new usage
         */
+
+       //create a friend object from the state vars
+        const newFriend={
+            id:id,
+            name:name,
+            age:age,
+            favActivity:favActivity,
+        }
+
+        //needs to call handleAdd from App.js and send it newFriend
+        handleAdd(newFriend);
+
+        //call setId to increase if num for the next friend we make
+        setId(id+1);
+
+        //resetting the state vars to clear out textInput
+        setName("");
+        setAge("");
+        setFavActivity("");
+        Keyboard.dismiss();
     }
 
     return (
@@ -94,4 +114,8 @@ const styles = StyleSheet.create({
         borderWidth:5,
         width:150,
     },
+    text:{
+        color: colors.primary,
+        fontSize: 20,
+    }
 })
